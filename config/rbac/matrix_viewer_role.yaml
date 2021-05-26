@@ -1,0 +1,20 @@
+# permissions for end users to view matrices.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: matrix-viewer-role
+rules:
+- apiGroups:
+  - matrix.example.com
+  resources:
+  - matrices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - matrix.example.com
+  resources:
+  - matrices/status
+  verbs:
+  - get
